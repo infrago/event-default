@@ -101,7 +101,7 @@ func (connect *defaultConnect) Stop() error {
 	return nil
 }
 
-func (connect *defaultConnect) Notify(name string, data []byte) error {
+func (connect *defaultConnect) Publish(name string, data []byte) error {
 	if qqq, ok := connect.events[name]; ok {
 		qqq <- &defaultMsg{name, data}
 	}
